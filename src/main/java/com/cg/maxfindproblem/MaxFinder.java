@@ -1,23 +1,32 @@
 package com.cg.maxfindproblem;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class MaxFinder<E extends Comparable<E>> {
 	ArrayList<E> arr = new ArrayList<>();
 
-	public ArrayList<E> add(E a, E b, E c , E d)
+	public ArrayList<E> add(E a, E b, E c)
 	{
 		arr.add(a);
 		arr.add(b);
 		arr.add(c);
-		arr.add(d);
 		return arr;
 	}
 	
 	public <E extends Comparable<E>> E find_maximum(ArrayList<E> arr) {
+		Collections.sort(arr);
+		printMax(arr);
 		return arr.get(arr.size()-1);
 	}
 	
+	public void printMax(ArrayList<E> arr2) {
+		
+		System.out.println(arr2.get(arr2.size()-1));
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Max Finder");	
 	}
